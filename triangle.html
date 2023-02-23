@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Triangle</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(/pic/money.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+           
+           
+        }
+
+        
+
+        .luckyNum {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 300%;
+            padding-top: 15px;
+        }
+
+        #picks {
+            border: 1px solid rgb(0, 0, 0);
+            margin: 7px;
+            padding: 10px;
+            border-radius: 5%;
+            color: rgb(255, 98, 0);
+        }
+
+        .giftCard {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: rgb(115, 247, 115);
+        }
+
+        h2 {
+            color: rgb(97, 247, 222);
+            font-size: 35px;
+        }
+
+        h1 {
+            color: rgb(255, 98, 0);
+        }
+
+        .allTriangles {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 5%;
+        }
+
+        button {
+            background-color: rgb(188, 243, 125);
+            border-radius: 35%;
+            padding: 5px;
+        }
+
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1%;
+            margin-bottom: 2%;
+           
+            width: 300px;
+            height: 150px;
+            border-radius: 7%;
+            border-color: rgb(30, 58, 43);
+           background-image: url(/pic/dollar.jpeg);
+        }
+
+		.triangle1  {
+			position: relative;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 50px 86.6px 50px;
+			border-color: transparent transparent rgb(198, 200, 203) transparent;
+            padding-top: 1%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			color: rgb(255, 98, 0);
+            
+           
+		}
+
+        .triangle2 {
+            position: relative;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 50px 86.6px 50px;
+			border-color: transparent transparent rgb(198, 200, 203) transparent;
+			padding-top: 1%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			color: rgb(255, 98, 0);
+        }
+
+        .triangle3 {
+            position: relative;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 50px 86.6px 50px;
+			border-color: transparent transparent rgb(198, 200, 203) transparent;
+			padding-top: 1%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			color: rgb(255, 98, 0);
+        }
+
+        .triangle4 {
+            position: relative;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 50px 86.6px 50px;
+			border-color: transparent transparent rgb(198, 200, 203) transparent;
+			padding-top: 1%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			color: rgb(255, 98, 0);
+        }
+
+
+
+        
+		
+        #randomNum1    {
+           position: relative;
+           top: 50px;
+        }
+
+        #randomNum2 {
+            position: relative;
+           top: 50px;
+        }
+
+        #randomNum3 {
+            position: relative;
+           top: 50px;
+        }
+        
+        #randomNum4 {
+            position: relative;
+           top: 50px;
+        }
+
+	</style>
+</head>
+<body>
+    <div class="background">
+    <div class="luckyNum">
+        <span id="picks">2</span>
+        <span id="picks">7</span>
+        <span id="picks">7</span>
+        <span id="picks">6</span>
+    </div>
+
+    <div class="giftCard">
+        <h2>If you match these 4 numbers in the triangles pick four you win
+             <strong>$100</strong> gift card.</h2>
+            <div>
+             <h2>If you get four of a kind you win <strong>$50</strong></h2>
+            </div>
+            <h2>Any order will get you <strong>$25</strong></h2>
+            <h1>Make sure to take a screen shot </h1>
+    </div>
+
+<span class="allTriangles">
+ <fieldset>
+    <button id="tri1Button" onclick="Triangle1()">Click to get first number</button>
+	<div class="triangle1" >
+		<span id="randomNum1"></span>
+	</div>
+ </fieldset>
+
+ <fieldset>
+    <button id="tri2Button" onclick="Triangle2()">Click to get Second number</button>
+	<div class="triangle2" >
+		<span id="randomNum2"></span>
+	</div>
+ </fieldset>
+
+ <fieldset>
+    <button id="tri3Button" onclick="Triangle3()">Click to get third number</button>
+	<div class="triangle3" >
+		<span id="randomNum3"></span>
+	</div>
+ </fieldset>
+
+ <fieldset>
+    <button id="tri4Button" onclick="Triangle4()">Click to get fourth number</button>
+	<div class="triangle4" >
+		<span id="randomNum4"></span>
+	</div>
+ </fieldset>
+</span>
+</div>
+    <script>
+		function Triangle1() {
+            var button = document.getElementById("tri1Button");
+            if (button.disabled){
+                return;
+            }
+            button.disabled = true; // disabled button after its been clicked
+			var triangle = document.getElementById("triangle");
+			var randomNum = Math.floor(Math.random() * 10); // generates random number from 0 to 9
+			document.getElementById("tri1Button").innerHTML = "This is your first number , click second button "; // update button text with random number
+			document.getElementById("randomNum1").innerHTML = randomNum; // put the random number inside the triangle
+			
+		}
+
+        function Triangle2() {
+            var button = document.getElementById("tri2Button");
+            if (button.disabled){
+                return;
+            }
+            button.disabled = true; // disabled button after its been clicked
+			var triangle = document.getElementById("triangle");
+			var randomNum = Math.floor(Math.random() * 10); // generates random number from 0 to 9
+			document.getElementById("tri2Button").innerHTML = "This is your Second number , click third button "; // update button text with random number
+			document.getElementById("randomNum2").innerHTML = randomNum; // put the random number inside the triangle
+			
+		}
+		
+        function Triangle3() {
+            var button = document.getElementById("tri3Button");
+            if (button.disabled){
+                return;
+            }
+            button.disabled = true; // disabled button after its been clicked
+			var triangle = document.getElementById("triangle");
+			var randomNum = Math.floor(Math.random() * 10); // generates random number from 0 to 9
+			document.getElementById("tri3Button").innerHTML = "This is your third number , click fourth button "; // update button text with random number
+			document.getElementById("randomNum3").innerHTML = randomNum; // put the random number inside the triangle
+			
+		}
+		
+        function Triangle4() {
+            var button = document.getElementById("tri4Button");
+            if (button.disabled){
+                return;
+            }
+            button.disabled = true; // disabled button after its been clicked
+			var triangle = document.getElementById("triangle");
+			var randomNum = Math.floor(Math.random() * 10); // generates random number from 0 to 9
+			document.getElementById("tri4Button").innerHTML = "This is your last number , no more clicks "; // update button text with random number
+			document.getElementById("randomNum4").innerHTML = randomNum; // put the random number inside the triangle
+			
+		}
+		
+		
+	</script>
+</body>
+</html>
